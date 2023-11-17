@@ -10,29 +10,26 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    {% endblock %} 
+    {% endblock %}
 
 
     {% block extra_meta %}
     {% endblock %} 
 
-
-          
     {% block extra_css %}
-    {% endblock %}
+    {% endblock %} 
 
     {% block extra_js %} 
-    {% endblock %}
+    {% endblock %} 
 
     {% block corecss %}
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    {% endblock %} 
+    {% endblock %}
     
     {% block corejs %}
     <script
@@ -46,8 +43,9 @@
       crossorigin="anonymous"
     ></script>
     {% endblock %}
-    <title>۞ GODMODE ۞ {%block extra_title %}
-    {% endblock %}</title>
+
+
+    <title>۞ GODMODE ۞ {%block extra_title %}{% endblock %}</title>
   </head>
 
   <body>
@@ -56,7 +54,18 @@
     {% if messages %}
     <div class="message-container"></div>
 
-    {% endif %} {% block page_header %} {% endblock %} {% block content %} {%
-    endblock %} {% block postloadjs %} {% endblock %}
+    {% endif %} 
+
+
+    {% block page_header %}
+    {% endblock %} 
+
+
+    {% block content %} 
+    {% endblock %}
+
+
+    {% block postloadjs %}
+    {% endblock %}
   </body>
 </html>
