@@ -1,34 +1,28 @@
 html {
-    height: 100%;
+    height: 95%;
 }
 
-
+.imgsize {}
 
 .logoflt {
-    
     width: 200px;
-    /* Other styles for the logo */
-    background-color: transparent;
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0);
-    /* Initial inner glow */
-    animation: glow 1s infinite alternate;
+    height: 200px;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    animation: shadowAnimation 1s infinite alternate;
+
+
 }
 
-@keyframes glow {
+@keyframes shadowAnimation {
     0% {
-        box-shadow:
-            inset 0 0 10px rgba(255, 255, 255, 0),
-            /* Initial inner glow */
-            0 0 10px rgba(255, 255, 255, 0);
-        /* Initial outward glow */
+        filter: drop-shadow(0.2em 0.1em 0.5em rgba(255, 255, 255, 0));
+        /* Transparent white */
     }
 
     100% {
-        box-shadow:
-            inset 2px 0px 360px 5px rgba(255, 255, 255, 0.5),
-            /* Maximum inner glow */
-            0 40px 50px rgb(255, 255, 255);
-        /* Maximum outward glow */
+        filter: drop-shadow(0.2em 0.1em 0.5em white);
+        /* Fully colored white */
     }
 }
 
@@ -57,6 +51,13 @@ html {
     }
 }
 
+.navbckg {
+    background-color: rgba(0, 27, 1, 0.596);
+
+
+}
+
+
 body {
     background: url('/media/background.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -66,9 +67,6 @@ body {
     font-size: large;
 }
 
-.text-shadow {
-    text-shadow: 2px 0px 2px black;
-}
 
 /* from Bulma */
 .icon {
@@ -121,7 +119,7 @@ body {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-        max-width: 80%;
+        max-width: 79%;
         max-height: 60%;
     }
 }
