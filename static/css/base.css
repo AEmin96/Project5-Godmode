@@ -52,7 +52,7 @@ html {
 }
 
 .navbckg {
-    background-color: rgba(0, 27, 1, 0.596);
+    background: linear-gradient(to right, transparent 10%, transparent 20%, rgb(0, 27, 1) 50%, transparent 80%, transparent 10%);
 
 
 }
