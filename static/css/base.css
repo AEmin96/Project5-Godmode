@@ -5,6 +5,7 @@ html {
 
 
 .logoflt {
+    
     width: 200px;
     /* Other styles for the logo */
     background-color: transparent;
@@ -31,12 +32,38 @@ html {
     }
 }
 
+.cmgsn {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5em;
+    position: relative;
+    animation: glowcmn 1s infinite alternate;
+}
+
+@keyframes glowcmn {
+    0% {
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0),
+            /* Initial inner glow */
+            0 0 10px rgba(255, 255, 255, 0);
+        /* Initial outward glow */
+    }
+
+    100% {
+        text-shadow:
+            0 0 2px rgba(255, 255, 255, 0.5),
+            /* Maximum inner glow */
+            0 0 5px rgb(255, 255, 255);
+        /* Maximum outward glow */
+    }
+}
+
 body {
     background: url('/media/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: 65vh;
     color: #555;
-    font-family: 'Roboto';
+    font-family: 'Poppins';
+    font-size: large;
 }
 
 .text-shadow {
@@ -95,6 +122,7 @@ body {
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
+        max-height: 60%;
     }
 }
 
@@ -106,6 +134,7 @@ body {
         right: 0;
         left: 0;
         z-index: 1030;
+        max-height: 30%;
     }
 
     .header-container {
