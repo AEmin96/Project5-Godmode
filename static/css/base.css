@@ -2,8 +2,6 @@ html {
     height: 95%;
 }
 
-.imgsize {}
-
 .logoflt {
     width: 200px;
     height: 200px;
@@ -26,28 +24,38 @@ html {
     }
 }
 
-.cmgsn {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 5em;
-    position: relative;
-    animation: glowcmn 1s infinite alternate;
-}
-
-@keyframes glowcmn {
+@keyframes innerAnimation {
     0% {
-        text-shadow:
-            0 0 6px rgba(255, 255, 255, 0),
-            /* Initial inner glow */
-            0 0 10px rgba(255, 255, 255, 0);
-        /* Initial outward glow */
+        box-shadow: inset 0.2em 0.1em 0.5em rgba(82, 81, 81, 0);
+        /* Transparent inner shadow */
     }
 
     100% {
-        text-shadow:
-            0 0 2px rgba(255, 255, 255, 0.5),
-            /* Maximum inner glow */
-            0 0 5px rgb(255, 255, 255);
-        /* Maximum outward glow */
+        box-shadow: inset 0.2em 0.1em 1em white;
+        /* Fully colored inner shadow */
+    }
+}
+
+.cmgsn {
+    font-family: Impact, sans-serif;
+    font-size: 6em;
+    font-weight: 200;
+    position: relative;
+    animation: flashcmn 0.2s infinite alternate;
+
+}
+
+@keyframes flashcmn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -58,14 +66,19 @@ html {
 }
 
 i.fa {
-    font-size: 40px;
-    margin: 2% 1.3% 0 1.3%;
+    font-size: 50px;
+    margin: 25% 1.3% 0 1.3%;
+    color: white;
+}
+
+i.fas {
+    font-size: 33px;
     color: white;
 }
 
 
 .footerbck {
-    background: linear-gradient(to right, transparent 10%, transparent 0%, rgb(0, 27, 1) 50%, transparent 80%, transparent 10%);
+    background: linear-gradient(to right, transparent 10%, transparent 0%, rgb(0, 27, 1) 50%, transparent 100%, transparent 10%);
     font-size: 25px;
 }
 
@@ -101,6 +114,8 @@ body {
     background: black;
     color: white;
     min-width: 260px;
+    animation: shadowAnimation 1s infinite alternate;
+    animation: innerAnimation 1s infinite alternate;
 }
 
 .btn-black {
@@ -126,6 +141,7 @@ body {
     border: 1px solid black !important;
 }
 
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -147,7 +163,37 @@ body {
         max-height: 30%;
     }
 
+    .imgtext {
+
+        display: block;
+        margin-left: 28%;
+        margin-right: auto;
+        width: 50%;
+    }
+
     .header-container {
         padding-top: 164px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footersd {
+        font-size: 35px;
+        color: #fff;
+        text-shadow: 3px 2px 2px rgb(0, 0, 0);
+    }
+
+    .imgtext {
+
+        margin-top: 199px;
+        width: 500px;
+    }
+
+    .cpsd {
+        font-size: 22px;
+    }
+
+    .flsd {
+        font-size: 29px;
     }
 }
