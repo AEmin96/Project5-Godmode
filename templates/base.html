@@ -15,6 +15,8 @@
     {% endblock %}
 
     {% block corecss %}
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +52,7 @@
     <div class="row">
         <div class="col-12 text-center ">
             <div class="rounded-circle mx-auto d-block logoflt">
-                <img src="../media/logo.png" class="img-fluid imgsize" alt="Logo">
+                <img src="{{ MEDIA_URL }}logo.png" class="img-fluid imgsize" alt="Logo">
             </div>
         </div>
     </div>
@@ -100,9 +102,7 @@
 
             </div>
         </div>
-        <div class=" text-lg my-2 d-flex text-center justify-content-center">
-            <h1 class="cmgsn text-black"> COMING <br> SOON ! </h1>
-        </div>
+       
     </header>
 
     {% if messages %}
@@ -128,7 +128,7 @@
             </p>
             <p class="logotext">
                 <a href="{% url 'home' %}">
-                    <img src=" ../media/logotext.png" class="img-fluid imgtext" alt="LogoGodmode">
+                    <img src="{{ MEDIA_URL }}logotext.png" class="img-fluid imgtext" alt="LogoGodmode">
                 </a>
             </p>
             <p class="cpsd text-right">© GODMODE, 2023. <br> All Rights Reserved. </p>
