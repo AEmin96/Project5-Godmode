@@ -52,17 +52,19 @@
     <div class="row">
         <div class="col-12 text-center ">
             <div class="rounded-circle mx-auto d-block logoflt">
-                <img src="{{ MEDIA_URL }}logo.png" class="img-fluid imgsize" alt="Logo">
+                <a href="{% url 'home' %}">
+                    <img src="{{ MEDIA_URL }}logo.png" class="img-fluid imgsize" alt="Logo">
+                </a>
             </div>
         </div>
     </div>
-    <header class="container-fluid ">
-        <div id="topnav" class="row pt-lg-2 d-flex d-lg-flex justify-content-center navbckg ">
-            <div class="col-12 col-lg-4 my-0 py-1 py-lg-2 d-flex justify-content-center ">
+    <header class="container-fluid">
+        <div id="topnav" class="row pt-lg-2 d-flex d-lg-flex justify-content-center navbckg">
+            <div class="col-12 col-lg-4 my-0 py-1 py-lg-1 d-flex justify-content-center">
                 <ul
-                    class="col-12 list-inline list-unstyled text-lg-right my-0 d-flex justify-content-center justify-content-lg-center  ">
-                    <li class="list-inline-item dropdown text-center text-shadow ">
-                        <a class="text-white nav-link " href="#" id="user-options" data-toggle="dropdown"
+                    class="col-12 list-inline list-unstyled text-lg-right my-0 d-flex justify-content-center justify-content-lg-center">
+                    <li class="list-inline-item dropdown text-center text-shadow">
+                        <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -82,7 +84,17 @@
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item text-center">
+
+                    <li class="list-inline-item dropdown text-center text-shadow ml-lg-2 mr-lg-2">
+                        <a href="{% url 'products' %}" class="text-white nav-link">
+                            <div class="text-center">
+                                <div><i class="fas fa-shop fa-lg"></i></div>
+                                <p class="my-0">PRODUCTS</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="list-inline-item text-center text-shadow ml-lg-2 mr-lg-2">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
                             href="">
                             <div class="text-center">
@@ -94,16 +106,14 @@
                                     $0.00
                                     {% endif %}
                                 </p>
-
                             </div>
                         </a>
                     </li>
                 </ul>
-
             </div>
         </div>
-       
     </header>
+
 
     {% if messages %}
     <div class="message-container"></div>
