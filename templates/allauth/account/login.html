@@ -5,9 +5,8 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container-fluid d-flex align-items-center justify-content-center vh-80 vw-30"
-    style="background-image: linear-gradient(to right, transparent 10%, transparent 20%, rgb(255, 255, 255) 50%, transparent 80%, transparent 10%);">
-    <div class="row">
+<div class="container-fluid d-flex align-items-center justify-content-center vh-80 vw-30">
+    <div class="row" style="background-color: rgba(174, 212, 196, 0.87); border: 4px black outset;">
         <div class="col-md-6 offset-md-3">
             <h1 class="text-center" style="color: black;">{% trans "Sign In" %}</h1>
 
@@ -40,7 +39,7 @@
             </p>
             {% endif %}
 
-            <form class="login" method="POST" action="{% url 'account_login' %}">
+            <form class="login" style="color: black; margin: 12px;" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
